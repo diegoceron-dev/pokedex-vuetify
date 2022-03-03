@@ -21,19 +21,19 @@
     </v-app-bar>
 
     <v-main>
-      <!-- <HelloWorld/> -->
+      <PokemonList/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld';
+import PokemonList from './components/PokemonList';
 
 export default {
   name: 'App',
 
   components: {
-    //HelloWorld,
+    PokemonList,
   },
 
   data: () => ({
