@@ -9,16 +9,6 @@
     </v-row>
     <v-row>
       <v-col>
-        <v-text-field label="Search pokemon" v-model="name"></v-text-field>
-      </v-col>
-      <v-col>
-        <v-btn class="mx-2" fab dark large color="orange" @click="findPokemon">
-          <v-icon dark> mdi-database-search </v-icon>
-        </v-btn>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col>
         <v-simple-table style="padding-top: 2rem">
           <template v-slot:default>
             <thead>
@@ -71,20 +61,6 @@ export default {
           this.countPokemon = response.data.count;
           console.log(this.pokemons);
         });
-    },
-    findPokemon() {
-      if (this.name) {
-        console.log(this.name.toLowerCase())
-        this.axios
-          .get("https://pokeapi.co/api/v2/pokemon/" + this.name.toLowerCase())
-          .then((response) => {
-            this.pokemons = [];
-            this.pokemons.push(response)
-            this.countPokemon = 1;
-            this.totalPages = 1;
-            console.log(this.pokemons);
-          });
-      }
     },
   },
   mounted() {
